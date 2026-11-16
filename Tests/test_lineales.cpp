@@ -50,5 +50,23 @@ int main() {
     assert(resultadoKevin[0] == 0);
     assert(resultadoKevin[1] == 1);
 
+    bool esPalindromo(char palabra[]);
+
+    char palindromoKevin[] = "reconocer";
+    assert(esPalindromo(palindromoKevin) == true);
+
+    char noPalindromoKevin[] = "computadora";
+    assert(esPalindromo(noPalindromoKevin) == false);
+
+    char unaLetraKevin[] = "a";
+    assert(esPalindromo(unaLetraKevin) == true);
+
+    char palabraVaciaKevin[] = "";
+    assert(esPalindromo(palabraVaciaKevin) == true);
+
+
+
+    
+
     return 0;
 }
