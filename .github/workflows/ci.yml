@@ -1,0 +1,35 @@
+name: Pruebas C++
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Compilar y ejecutar el programa
+        run: |
+          g++ -std=c++17 -Wall -Wextra -pedantic main.cpp Lineales/*.cpp NoLineales/*.cpp -o "$RUNNER_TEMP/snippets"
+          "$RUNNER_TEMP/snippets"
+
+      - name: Compilar y ejecutar todas las pruebas
+        run: |
+          for archivo in Tests/test_*.cpp; do
+            nombre=$(basename "$archivo" .cpp)
+            g++ -std=c++17 -Wall -Wextra -pedantic -I. "$archivo" Lineales/*.cpp NoLineales/*.cpp -o "$RUNNER_TEMP/$nombre"
+            "$RUNNER_TEMP/$nombre"
+          done
+
+      - name: Compilar el demo si esta en el repositorio
+        run: |
+          if [ -f demo_conflicto.cpp ]; then
+            g++ -std=c++17 -Wall -Wextra -pedantic demo_conflicto.cpp -o "$RUNNER_TEMP/demo_conflicto"
+            "$RUNNER_TEMP/demo_conflicto"
+          fi
