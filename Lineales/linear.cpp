@@ -27,3 +27,20 @@ void buscarNombreLineal() {
              << " esta en la posicion " << posicion << "\n";
     }
 }
+
+
+void ordenarBurbuja(int numeros[], int cantidad) {
+    for (int i = 0; i < cantidad - 1; i++) {
+        for (int j = 0; j < cantidad - 1 - i; j++) {
+            if (numeros[j] > numeros[j + 1]) {
+                int temporal = numeros[j];
+                numeros[j] = numeros[j + 1];
+                numeros[j + 1] = temporal;
+            }
+        }
+    }
+
+}
+
+
+

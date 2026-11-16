@@ -17,7 +17,22 @@ int main() {
     assert(buscarNombreLineal(nombres, 4, "Luis") == -1);
     assert(buscarNombreLineal(nombres, 0, "Ana") == -1);
 
-    // AGREGAR_PRUEBA_AQUI
+    int desordenadosMoises[] = {3, 1, 2};
+    ordenarBurbuja(desordenadosMoises, 3);
+    assert(desordenadosMoises[0] == 1);
+    assert(desordenadosMoises[1] == 2);
+    assert(desordenadosMoises[2] == 3);
+
+    int repetidosMoises[] = {2, 1, 2};
+    ordenarBurbuja(repetidosMoises, 3);
+    assert(repetidosMoises[0] == 1);
+    assert(repetidosMoises[1] == 2);
+    assert(repetidosMoises[2] == 2);
+
+    int unNumeroMoises[] = {5};
+    ordenarBurbuja(unNumeroMoises, 1);
+    assert(unNumeroMoises[0] == 5);
+
 
     return 0;
 }
