@@ -51,6 +51,21 @@ int main() {
     assert(resultadoKevin[1] == 1);
 
 
+    bool esPalindromo(char palabra[]);
+
+    char palindromoKevin[] = "reconocer";
+    assert(esPalindromo(palindromoKevin) == true);
+
+    char noPalindromoKevin[] = "computadora";
+    assert(esPalindromo(noPalindromoKevin) == false);
+
+    char unaLetraKevin[] = "a";
+    assert(esPalindromo(unaLetraKevin) == true);
+
+    char palabraVaciaKevin[] = "";
+    assert(esPalindromo(palabraVaciaKevin) == true);
+
+
     void ordenarInsercion(int numeros[], int cantidad);
 
     int desordenadosMoisesInsercion[] = {5, 2, 4, 1};
@@ -69,7 +84,6 @@ int main() {
     int unNumeroMoisesInsercion[] = {7};
     ordenarInsercion(unNumeroMoisesInsercion, 1);
     assert(unNumeroMoisesInsercion[0] == 7);
-
 
     return 0;
 }

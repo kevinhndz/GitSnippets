@@ -57,6 +57,26 @@ void ordenarBurbuja(int numeros[], int cantidad) {
 
 }
 
+
+bool esPalindromo(char palabra[]) {
+    int longitud = 0;
+
+    while (palabra[longitud] != '\0') {
+        longitud++;
+    }
+
+    for (int i = 0; i < longitud / 2; i++) {
+        if (palabra[i] != palabra[longitud - 1 - i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+
+
 void ordenarInsercion(int numeros[], int cantidad) {
     for (int i = 1; i < cantidad; i++) {
         int actual = numeros[i];
@@ -70,4 +90,3 @@ void ordenarInsercion(int numeros[], int cantidad) {
         numeros[j + 1] = actual;
     }
 }
-
