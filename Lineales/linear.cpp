@@ -27,3 +27,18 @@ void buscarNombreLineal() {
              << " esta en la posicion " << posicion << "\n";
     }
 }
+
+void twoSum(int numeros[], int cantidad, int objetivo, int resultado[]) {
+    resultado[0] = -1;
+    resultado[1] = -1;
+
+    for (int i = 0; i < cantidad; i++) {
+        for (int j = i + 1; j < cantidad; j++) {
+            if (numeros[i] + numeros[j] == objetivo) {
+                resultado[0] = i;
+                resultado[1] = j;
+                return;
+            }
+        }
+    }
+}
