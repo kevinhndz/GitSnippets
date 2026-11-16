@@ -29,6 +29,21 @@ void buscarNombreLineal() {
 }
 
 
+void twoSum(int numeros[], int cantidad, int objetivo, int resultado[]) {
+    resultado[0] = -1;
+    resultado[1] = -1;
+
+    for (int i = 0; i < cantidad; i++) {
+        for (int j = i + 1; j < cantidad; j++) {
+            if (numeros[i] + numeros[j] == objetivo) {
+                resultado[0] = i;
+                resultado[1] = j;
+                return;
+            }
+        }
+    }
+}
+
 void ordenarBurbuja(int numeros[], int cantidad) {
     for (int i = 0; i < cantidad - 1; i++) {
         for (int j = 0; j < cantidad - 1 - i; j++) {
@@ -41,6 +56,3 @@ void ordenarBurbuja(int numeros[], int cantidad) {
     }
 
 }
-
-
-
