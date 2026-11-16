@@ -72,6 +72,10 @@ bool esPalindromo(char palabra[]) {
     }
 
     return true;
+}
+
+
+
 
 void ordenarInsercion(int numeros[], int cantidad) {
     for (int i = 1; i < cantidad; i++) {
@@ -85,6 +89,4 @@ void ordenarInsercion(int numeros[], int cantidad) {
 
         numeros[j + 1] = actual;
     }
-
 }
-
