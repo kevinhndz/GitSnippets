@@ -68,5 +68,26 @@ int main() {
 
     
 
+
+    void ordenarInsercion(int numeros[], int cantidad);
+
+    int desordenadosMoisesInsercion[] = {5, 2, 4, 1};
+    ordenarInsercion(desordenadosMoisesInsercion, 4);
+    assert(desordenadosMoisesInsercion[0] == 1);
+    assert(desordenadosMoisesInsercion[1] == 2);
+    assert(desordenadosMoisesInsercion[2] == 4);
+    assert(desordenadosMoisesInsercion[3] == 5);
+
+    int repetidosMoisesInsercion[] = {3, 1, 3};
+    ordenarInsercion(repetidosMoisesInsercion, 3);
+    assert(repetidosMoisesInsercion[0] == 1);
+    assert(repetidosMoisesInsercion[1] == 3);
+    assert(repetidosMoisesInsercion[2] == 3);
+
+    int unNumeroMoisesInsercion[] = {7};
+    ordenarInsercion(unNumeroMoisesInsercion, 1);
+    assert(unNumeroMoisesInsercion[0] == 7);
+
+
     return 0;
 }
